@@ -45,7 +45,11 @@ const router = new Router({
     },
 		{
 			path:'/main',
-			component:()=>import('@/form/main')
+			component:()=>import('@/form/main'),
+			  redirect:'/welcome',
+			  children:[
+				{path:'/welcome',component:()=>import ('@/views/welcome')}
+				]
 		}
   ]
 })
